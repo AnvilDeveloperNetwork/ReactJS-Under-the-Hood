@@ -6,7 +6,7 @@ const createElement = (
   return {
     nodeName,
     props,
-    children: children.flat() // [["Hello, world"]] =>
+    children: children.flat()
   };
 };
 
@@ -58,64 +58,9 @@ const setState = updatedState => {
   document.body.appendChild(render(<App />));
 };
 
-const starters = [
-  {
-    name: "bulbasaur",
-    img:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-  },
-  {
-    name: "charmander",
-    img:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-  },
-  {
-    name: "squirtle",
-    img:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-  }
-];
+const App = () => <div />;
 
-const darkGray = "#323135";
-const styles = {
-  ["dark"]: `background-color: ${darkGray}; color: white;`,
-  ["light"]: `background-color: white; color: ${darkGray};`
-};
-
-const toggleTheme = () => {
-  if (state.theme === "dark") {
-    setState({ theme: "light" });
-  } else {
-    setState({ theme: "dark" });
-  }
-};
-
-const Box = ({ children }) => <div>{children}</div>;
-
-const TitleBox = ({ title, children }) => (
-  <div style={`padding: 2em; ${styles[state.theme]}`}>
-    <h3>{title}</h3>
-    <Box>{children}</Box>
-  </div>
-);
-
-const App = () => (
-  <div style={"text-align: center;"}>
-    <button onclick={"toggleTheme()"}>Toggle Theme</button>
-    <TitleBox title={"Pokemon"}>
-      {starters.map(({ name, img }) => (
-        <div>
-          <img src={img} />
-          <p>{name}</p>
-        </div>
-      ))}
-    </TitleBox>
-  </div>
-);
-
-const initialState = {
-  theme: "light"
-};
+const initialState = {};
 
 // Initial render.
 setState(initialState);
