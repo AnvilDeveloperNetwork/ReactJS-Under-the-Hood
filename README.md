@@ -10,11 +10,11 @@
 
 Our goal with the Anvil Developer Network is not just putting a focus on learning how to use development tools properly, but also to gain a better understanding of how these tools are built. So in the spirit of that goal, today, we'll be learning how to build our own version of React, a library that often gets credited for having a lot of "magic" going on beind the scenes.
 
-This talk has a github repo to support it which contains the final code and a README that walks through each slide and has many setup scripts that you can copy and paste to make setup easier.
+This talk has a github repo to support it, which contains the final code and a README that walks through each slide and has many setup scripts that you can copy and paste to make setup easier.
 
 ## Pre-reqs
 
-Some prereqs to fully understand the material in this workshop are Javascript, React, npm ecosystem, and the document api. If you aren't super familiar with some of these you will likely still be able to follow if you ASK QUESTIONS!
+Some prereqs to fully understand the material in this workshop are Javascript, React, the npm ecosystem, and the document api. If you aren't super familiar with some of these you will likely still be able to follow if you ASK QUESTIONS!
 
 ## What do we know about React
 
@@ -92,14 +92,12 @@ Alright let's do some setup and start building. We need the following things to 
 
 `touch src/index.js`
 
-#### Babel Installation & Setup
-
-**Installing Babel**
+#### Installing Babel
 
 `npm install --save-dev @babel/core @babel/cli @babel/plugin-transform-react-jsx`
 
 
-**Configuring Babel**
+#### Configuring Babel
 
 `touch .babelrc`
 
@@ -111,7 +109,7 @@ Inside `.babelrc` copy and paste the following:
 }
 ```
 
-**Project Build Script**
+#### Project Build Script
 
 By adding the following to `scripts` in your package.json we will be able to quickly run our `src` folder files through the babel compiler and see the output in a `lib` folder.
 
@@ -252,7 +250,7 @@ We're going to write our own version of `ReactDOM.render` which will complete th
 
 ## Render Boilerplating
 
-Ok so here is some boilerplate for what our render function will do. The only argument to our render function will be a DOM node retuned from a call to createElement.
+Ok so here is some boilerplate for what our render function will do. The only argument to our render function will be a virtual DOM node retuned from a call to createElement.
 
 First, we need to create an actual DOM node using the document api. You may recognize the document object from using something like `document.getElementById()`. This document object offers a lot more functionality that you can find [here](https://developer.mozilla.org/en-US/docs/Web/API/Document).
 
